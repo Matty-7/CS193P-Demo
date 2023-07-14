@@ -23,30 +23,31 @@ struct ContentView: View {
 struct CardView: View {
     var isFaceUp: Bool
     var body: some View {
-        if isFaceUp {
-            ZStack {
-                RoundedRectangle(cornerRadius: 20)
+        
+        ZStack {
+            var shape = RoundedRectangle(cornerRadius: 20)
+            if isFaceUp {
+                shape
                     .fill()
                     .foregroundColor(.white)
-                RoundedRectangle(cornerRadius: 20)
+                shape
                     .stroke(lineWidth: 3)
                 Text("✈️")
                     .font(.largeTitle)
-            }
-        } else {
-                RoundedRectangle(cornerRadius: 20)
+            } else {
+                shape
                     .fill()
             }
         }
     }
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .preferredColorScheme(.light)
-        ContentView()
-            .preferredColorScheme(.dark)
+    
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+                .preferredColorScheme(.light)
+            ContentView()
+                .preferredColorScheme(.dark)
+        }
     }
 }
-
