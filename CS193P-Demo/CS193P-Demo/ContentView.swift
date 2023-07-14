@@ -23,9 +23,8 @@ struct ContentView: View {
 struct CardView: View {
     var isFaceUp: Bool
     var body: some View {
-        
         ZStack {
-            var shape = RoundedRectangle(cornerRadius: 20)
+            let shape = RoundedRectangle(cornerRadius: 20)
             if isFaceUp {
                 shape.fill().foregroundColor(.white)
                 shape.stroke(lineWidth: 3)
@@ -35,7 +34,6 @@ struct CardView: View {
             }
         }
     }
-    
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
